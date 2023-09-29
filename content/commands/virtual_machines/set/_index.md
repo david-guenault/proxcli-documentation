@@ -1,13 +1,14 @@
 +++
-title = 'Set'
-date = 2023-09-26T12:42:09+02:00
+title = "Set"
+date = 2023-09-26T10:42:09.000Z
 draft = false
 weight = 3
+slug = "set"
 +++
 
 ## Set virtual machines parameters
 
-![proxcli vms set](proxcli_vms_set_help.png)
+
 
 ### Arguments
 

@@ -1,7 +1,6 @@
 +++
 title = "Clone"
 date = 2023-09-26T10:42:09.000Z
-draft = "2023-09-29T16:41:46.369Z"
 weight = 2
 slug = "clone"
 +++

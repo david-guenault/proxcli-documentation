@@ -23,6 +23,26 @@
           "type": "datetime"
         },
         {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "choice",
+          "choices": [
+            "list",
+            "virtual machines",
+            "proxcli"
+          ]
+        },
+        {
           "title": "weight",
           "name": "weight",
           "type": "number"

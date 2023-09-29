@@ -1,7 +1,6 @@
 +++
 title = "List"
 date = 2023-09-26T10:42:09.000Z
-draft = false
 categories = [ "proxcli", "virtual machine", "list" ]
 description = "list virtual machines"
 keywords = [ "list", "virtual machines", "proxcli" ]

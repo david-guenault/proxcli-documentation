@@ -48,4 +48,4 @@ proxcli config create --hosts "proxmox1,proxmox2,proxmox3" --user "root@pam" --p
  ```bash
  proxcli --help
  ```
-
+![](/images/proxcli_help.png)
