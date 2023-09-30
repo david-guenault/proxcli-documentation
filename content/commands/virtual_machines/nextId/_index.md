@@ -24,8 +24,3 @@ menuTitle = "NextId"
 proxcli vms nextId
 ```
 
-- migrate multiples virtual machines by selecting the with a regex filter on their name
-
-```bash
-proxcli vms migrate --filter-name "^b4p" --target-node pve2
-```
