@@ -18,6 +18,11 @@ menuTitle = "Delete"
 |group|Cluster ha group name to be deleted|string|
 
 
+{{% notice style="note" %}}
+It is impossible to delete a group with associated resources. You must first delete resources from group and then delete the group
+{{% /notice %}}
+
+
 ## Examples
 
 - delete a cluster HA group
