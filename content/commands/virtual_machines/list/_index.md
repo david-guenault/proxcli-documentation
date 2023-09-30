@@ -1,5 +1,6 @@
 +++
-title = "List"
+title = "List virtual machines"
+menuTitle = "List"
 date = 2023-09-26T10:42:09.000Z
 categories = [ "proxcli", "virtual machine", "list" ]
 description = "list virtual machines"
@@ -7,8 +8,6 @@ keywords = [ "list", "virtual machines", "proxcli" ]
 slug = "list"
 weight=1
 +++
-
-## List virtual machines
 
 ![](/images/proxcli_vms_list_help.png)
 
