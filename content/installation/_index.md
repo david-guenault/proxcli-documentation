@@ -22,12 +22,12 @@ pip install --upgrade pip wheel
 ## Install proxcli in the virtual environment
 
 {{% notice style="info" %}}
-You can choose a proxcli version from one released on the github repo (here 0.1.0-alpha.3).
+You can choose a proxcli version from one released on the github repo (here 0.1.0-alpha.4).
 {{% /notice %}}
 
 
 ```bash
- pip install https://github.com/david-guenault/proxcli/archive/refs/tags/0.1.0-alpha.3.tar.gz
+ pip install https://github.com/david-guenault/proxcli/archive/refs/tags/0.1.0-alpha.4.tar.gz
   ```
 
 ## Initialize the configuration
