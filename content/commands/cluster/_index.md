@@ -6,4 +6,4 @@ slug = "cluster"
 weight = 2
 +++
 
-Here you will find proxcli commands dedicated to cluster management
+![](/images/proxcli_cluster_help.png)
