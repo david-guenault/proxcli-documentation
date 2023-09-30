@@ -10,7 +10,7 @@ weight: 5
 
 ![](/images/proxcli_vms_delete_help.png)
 
-# Options
+## Options
 
 |option|description|Allowed values|
 |---|---|---|
