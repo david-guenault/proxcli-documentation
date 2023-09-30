@@ -1,17 +1,19 @@
 +++
-title = "Clone"
+title = "Clone a virtual machine template"
 date = 2023-09-26T10:42:09.000Z
 weight = 2
 slug = "clone"
+keywords = "proxcli"
+description = "Clone a virtual machine template"
+menuTitle = "Clone"
 +++
 
-## Clone a virtual machine template
 
 ![](/images/proxcli_vms_clone_help.png)
 
-### Arguments
+## Options
 
-|argument|description|Allowed values|
+|option|description|Allowed values|
 |---|---|---|
 |vmid|virtual machine template id to be cloned|integer|
 |name|virtual machine clone name|regex string|
@@ -26,46 +28,71 @@ slug = "clone"
 vmid and name are mutualy exclusive
 {{% /notice %}}
 
-Exemples
 
-### Clone a virtual machine template
+## Examples
 
-- First we clone the exisiting template
+- Clone a virtual machine template
 
 ```bash
-proxcli vms clone --vmid 101 --name test --description test --full --block --target pve2 --storage b4papp 
+proxcli vms clone --vmid 111 --name test --description test --full-clone --block --target pve2 --storage b4papp 
 ```
 
-### Clone a virtual machine template with cloud enabled template
+- Clone a virtual machine template with cloud enabled template
+
+This is the same command as for a normal clone but you need additional steps to set user, password, ssh public key and network configuration. Try the following commands after cloning finishes. 
+
+```bash
+proxcli vms set --vmid 112 --ciuser myuser --cipassword mypassword --ipconfig "ip=dhcp" --sshkey "$(cat ~/.ssh/id_rsa.pub)"
+proxcli vms set --vmid 112 --cores 4 --memory 4096
+proxcli vms resize 
+```
 
 {{% notice style="info" %}}
 Make sure you already have a cloud init enabled template on your proxmox nodes. You can find in the next section an example of creating an ubuntu server cloud init enabled image. 
 {{% /notice %}}
 
-### How to create a cloud init enabled ubuntu template
-
-#### Customize the cloudimg with embeded qemu-guest-agent
-
-{{% notice style="tip" %}}
-you will need **virt-customize** tool in order to install qemu-guest-agent
+{{% notice style="tip" title="Customize the cloudimg with embeded qemu-guest-agent"%}}
+you will need **virt-customize** tool on your proxmox nodes in order to install qemu-guest-agent (install it with **apt install libguestfs-tools**)
 you also need an ubuntu cloud-init enabled image. You can find one [here](https://cloud-images.ubuntu.com/lunar/current/lunar-server-cloudimg-amd64.img)
-{{% /notice %}}
 
 ```bash
 virt-customize -a lunar-server-cloudimg-amd64.img --install qemu-guest-agent 
 virt-customize -a lunar-server-cloudimg-amd64.img --run-command "echo -n > /etc/machine-id"
 ```
+{{% /notice %}}
 
-#### Create a cloud init template on selected proxmox nodes
+
+{{% notice style="tip" title="Create a cloud init enabled template on selected proxmox nodes"%}}
+
+
+Those commands will help you create an ubuntu cloud init enabled virtual machine template. Adjust the variables at the begining of the script so it match your needs. 
 
 ```bash
-qm create $(pvesh get )  --memory {{terraform.qemu_cloud_init_template.memory}} --name ubuntu-cloud --net0 {{terraform.qemu_cloud_init_template.net}}
-qm set {{next_vmid.stdout}} --agent enabled=1
-qm importdisk {{next_vmid.stdout}} {{terraform.qemu_cloud_init_template.isopath}}/{{terraform.qemu_cloud_init_template.imagename}} {{terraform.qemu_cloud_init_template.storage}}
-qm set {{next_vmid.stdout}} --scsihw {{terraform.qemu_cloud_init_template.scsihw}} --{{terraform.qemu_cloud_init_template.devname}}0 {{terraform.qemu_cloud_init_template.storage}}:{{next_vmid.stdout}}/vm-{{next_vmid.stdout}}-disk-0.raw
-qm set {{next_vmid.stdout}} --ide2 {{terraform.qemu_cloud_init_template.storage}}:cloudinit
-qm set {{next_vmid.stdout}} --boot c --bootdisk {{terraform.qemu_cloud_init_template.devname}}0
-qm resize {{next_vmid.stdout}} virtio0 {{terraform.qemu_cloud_init_template.disk_size}}    
-qm set {{next_vmid.stdout}} --serial0 socket --vga serial0  
-qm template {{next_vmid.stdout}}
+vmid=$(pvesh get /cluster/nextid)
+isopath="/mnt/pve/isos/template/iso/lunar-server-cloudimg-amd64.img"
+storage="b4papp"
+scsihw="virtio-scsi-pci"
+devname="virtio"
+disksize="5G"
+qm create $vmid  --memory 4096 --name lunar-server-cloudinit --net0 virtio,bridge=vmbr0
+qm set $vmid --agent enabled=1
+qm importdisk $vmid $isopath $storage
+qm set $vmid --scsihw $scsihw --${devname}0 ${storage}:${vmid}/vm-${vmid}-disk-0.raw
+qm set $vmid --ide2 ${storage}:cloudinit
+qm set $vmid --boot c --bootdisk ${devname}0
+qm resize $vmid ${devname}0 ${disksize}    
+qm set ${vmid} --serial0 socket --vga serial0  
+qm template ${vmid}
 ```
+{{% /notice %}}
+
+{{% notice style="note" %}}
+On some shared storages (like Synology NFS share), you may encounter the following error with qm template command: 
+
+```
+/usr/bin/chattr: Operation not supported while reading flags on /mnt/pve/b4papp/images/111/base-111-disk-0.raw
+```
+
+You don't have to do anything, it is just a limitation in synology hardening. But it does not affect the creation of a template.
+{{% /notice %}}
+

@@ -1,18 +1,17 @@
 +++
-title = "Set"
+title = "Set virtual machine parameters"
 date = 2023-09-26T10:42:09.000Z
 draft = false
 weight = 3
 slug = "set"
+menuTitle = "Set"
 +++
 
-## Set virtual machines parameters
+![](/images/proxcli_vms_set_help.png)
 
+## Options
 
-
-### Arguments
-
-|argument|description|Allowed values|
+|option|description|Allowed values|
 |---|---|---|
 |vmid|The (unique) ID of the VM.|integer|
 |vmname|Virtual Machine exact name|string|
@@ -32,7 +31,7 @@ Set parameters is a small subset of what is available in the proxmox API. I (may
 {{% /notice %}}
 
 
-### Exemples
+## Examples
 
 {{% notice style="info" %}}
 assert we have already cloned a cloud init enabled ubuntu virtual machine with the following command:
@@ -54,5 +53,11 @@ proxcli vms set --vmid 110 --ciuser myuser --cipassword mypassword --ipconfig "i
 
 ```bash
 proxcli vms set --vmid 110 --cores 4 --memory 4096
+```
+
+- start the cloned virtual machine
+
+```bash
+proxcli vms start --vmid 111
 ```
 

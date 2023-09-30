@@ -81,22 +81,22 @@ title = "proxcli documentation"
 # showcase of the menu shortcuts; you can use relative URLs linking
 # to your content or use fully-quallified URLs to link outside of
 # your project
-[languages]
-  [languages.en]
-    title = "proxcli documentation"
-    weight = 1
-    languageName = "English"
-    # Language dependend settings:
-    # Use case https://gohugo.io/content-management/multilingual/#translation-by-content-directory
-    #contentDir = "content/en"
-    [languages.en.params]
-      landingPageName = "<i class='fas fa-home'></i> Home"
-
-  [[languages.en.menu.shortcuts]]
-    name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
-    identifier = "ds"
-    url = "https://github.com/david-guenault/proxcli"
-    weight = 10
+# [languages]
+#   [languages.en]
+#     title = "proxcli documentation"
+#     weight = 1
+#     languageName = "English"
+#     # Language dependend settings:
+#     # Use case https://gohugo.io/content-management/multilingual/#translation-by-content-directory
+#     #contentDir = "content/en"
+#     [languages.en.params]
+#       landingPageName = "<i class='fas fa-home'></i> Home"
+# 
+#   [[languages.en.menu.shortcuts]]
+#     name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+#     identifier = "ds"
+#     url = "https://github.com/david-guenault/proxcli"
+#     weight = 10
 
 
 # mounts are only needed in this showcase to access the publicly available screenshots;
@@ -142,19 +142,19 @@ title = "proxcli documentation"
 # consult this documentation for explaination
 [params]
   editURL = "https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/"
-  description = "Documentation for Hugo Relearn Theme"
-  author = "Sören Weber"
+  description = "proxcli documentation"
+  author = "David GUENAULT"
   showVisitedLinks = true
   collapsibleMenu = true
   disableBreadcrumb = false
-  disableRootBreadcrumb = true
-  disableInlineCopyToClipBoard = true
+  disableRootBreadcrumb = false
+  disableInlineCopyToClipBoard = false
   disableNextPrev = false
-  disableLandingPageButton = true
+  disableLandingPageButton = false
   breadcrumbSeparator = ">"
   titleSeparator = "::"
-  themeVariant = [ "auto", "relearn-bright", "relearn-light", "relearn-dark", "zen-light", "zen-dark", "neon", "learn", "blue", "green", "red" ]
-  themeVariantAuto = [ "relearn-light", "relearn-dark" ]
+  themeVariant = [ "blue" ]
+  themeVariantAuto = [ "blue" ]
   disableSeoHiddenPages = true
   # this is to index search for your native language in other languages, too (eg.
   # pir in this showcase)

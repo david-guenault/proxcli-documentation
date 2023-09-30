@@ -5,15 +5,16 @@ categories = [ "proxcli", "virtual machine", "list" ]
 description = "list virtual machines"
 keywords = [ "list", "virtual machines", "proxcli" ]
 slug = "list"
+weight=1
 +++
 
 ## List virtual machines
 
-![](/proxcli_vms_list.png)
+![](/images/proxcli_vms_list_help.png)
 
-### Arguments
+### Options
 
-|argument|description|Allowed values|
+|option|description|Allowed values|
 |---|---|---|
 |filter-name|apply a regex filter on virtual machines name|regex string
 |output-format|output the result of the list command in the selected format (default to table)|table or yaml or json|
@@ -57,7 +58,7 @@ In the previous exemples, the result is formated as a nice table. you can specif
 
 |table|json|yaml|
 |---|---|---|
-|![proxcli vms list](./proxcli_vms_list.png)|![proxcli vms list as json](./proxcli_vms_list_json.png)|![proxcli vms list as yaml](./proxcli_vms_list_yaml.png)|
+|![](/images/proxcli_vms_list.png)|![](/images/proxcli_vms_list_json.png)|![](/images/proxcli_vms_list_yaml.png)|
 {{% /notice %}}
 
 
