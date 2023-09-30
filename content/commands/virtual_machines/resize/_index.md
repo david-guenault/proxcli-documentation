@@ -10,7 +10,7 @@ weight: 4
 
 ![](/images/proxcli_vms_resize_help.png)
 
-# Options
+## Options
 
 |option|description|Allowed values|
 |---|---|---|
