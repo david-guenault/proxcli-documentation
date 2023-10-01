@@ -23,5 +23,4 @@ HA resouces is a virtual machine associated with an HA group. Several resources 
 
 ![](/images/proxcli_cluster_ha_schema.png)
 
-## Arguments
 

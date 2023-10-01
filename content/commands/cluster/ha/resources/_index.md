@@ -1,5 +1,6 @@
 +++
 title = "Cluster HA resources"
+menuTitle = "resources"
 date = 2023-09-26T10:42:09.000Z
 draft = false
 slug = "cluster"
