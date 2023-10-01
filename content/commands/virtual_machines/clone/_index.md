@@ -34,7 +34,7 @@ vmid and name are mutualy exclusive
 - Clone a virtual machine template
 
 ```bash
-proxcli vms clone --vmid 111 --name test --description test --full-clone --block --target pve2 --storage b4papp 
+proxcli vms clone --vmid 111 --name test --vm-description test --full-clone --block --target pve2 --storage b4papp 
 ```
 
 - Clone a virtual machine template with cloud enabled template
@@ -44,7 +44,7 @@ This is the same command as for a normal clone but you need additional steps to 
 ```bash
 proxcli vms set --vmid 112 --ciuser myuser --cipassword mypassword --ipconfig "ip=dhcp" --sshkey "$(cat ~/.ssh/id_rsa.pub)"
 proxcli vms set --vmid 112 --cores 4 --memory 4096
-proxcli vms resize 
+proxcli vms resize --vmid 112 --disk virtio0 --size "50G"
 ```
 
 {{% notice style="info" %}}
