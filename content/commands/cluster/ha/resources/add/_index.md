@@ -27,5 +27,5 @@ weight: 1
 - create a cluster ha resource with minimal informations
 
 ```bash
-proxcli cluster ha resources add --group gitlab --name gitlab --vmid 105
+proxcli cluster ha resources add --group gitlab --vmid 105
 ```
