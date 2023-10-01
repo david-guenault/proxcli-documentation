@@ -1,7 +1,7 @@
 +++
 title = "Display the next available vm id"
 date = 2023-09-26T10:42:09.000Z
-weight = 7
+weight = 10
 slug = "nextid"
 keywords = "proxcli"
 description = "Display the next available vm id"
