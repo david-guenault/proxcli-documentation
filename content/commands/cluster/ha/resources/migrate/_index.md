@@ -5,7 +5,7 @@ date: {}
 categories: []
 description: ""
 keywords: ""
-weight: 3
+weight: 4
 ---
 
 ![](/images/proxcli_cluster_ha_resources_migrate_help.png)
@@ -14,9 +14,10 @@ weight: 3
 
 |option|description|Allowed values|
 |---|---|---|
-|--vmid|The virtual machine id to migrate|integer|
-|--filter-name|a regex on virtual machines name used to select multiples virtual machines to be migrated|string|
-|--node|the target node to migrate the virtual machines to|string|
+|vmid|The virtual machine id to migrate|integer|
+|filter-name|a regex on virtual machines name used to select multiples virtual machines to be migrated|string|
+|node|the target node to migrate the virtual machines to|string|
+|block|wait for each resources to finish migration before starting another one (sequential mode)|string|
 
 {{% notice style="note" %}}
 vmid and filter-name are mutualy exclusive
@@ -34,4 +35,9 @@ proxcli cluster ha resources migrate --vmid 125 --node pve1
 
 ```bash
 proxcli cluster ha resources migrate --filter-name "^b4p-powerdns" --node pve1
+```
+- migrate multiple cluster ha resources to another node waiting for each resource to finish migration
+
+```bash
+proxcli cluster ha resources migrate --filter-name "^b4p-powerdns" --node pve1 --block
 ```
