@@ -5,7 +5,7 @@ date: {}
 categories: []
 description: ""
 keywords: ""
-weight: 2
+weight: 3
 ---
 
 ![](/images/proxcli_cluster_ha_resources_delete_help.png)

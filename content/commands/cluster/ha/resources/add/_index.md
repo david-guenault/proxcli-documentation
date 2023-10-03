@@ -5,7 +5,7 @@ date: {}
 categories: []
 description: ""
 keywords: ""
-weight: 1
+weight: 2
 ---
 
 ![](/images/proxcli_cluster_ha_resources_add_help.png)
