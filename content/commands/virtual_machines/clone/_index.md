@@ -70,11 +70,13 @@ Those commands will help you create an ubuntu cloud init enabled virtual machine
 ```bash
 vmid=$(pvesh get /cluster/nextid)
 isopath="/mnt/pve/isos/template/iso/lunar-server-cloudimg-amd64.img"
+templatename="lunar-server-cloudinit"
+memory=2048
 storage="b4papp"
 scsihw="virtio-scsi-pci"
 devname="virtio"
 disksize="5G"
-qm create $vmid  --memory 4096 --name lunar-server-cloudinit --net0 virtio,bridge=vmbr0
+qm create $vmid  --memory ${memory} --name ${templatename} --net0 virtio,bridge=vmbr0
 qm set $vmid --agent enabled=1
 qm importdisk $vmid $isopath $storage
 qm set $vmid --scsihw $scsihw --${devname}0 ${storage}:${vmid}/vm-${vmid}-disk-0.raw
