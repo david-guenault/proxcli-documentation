@@ -3,7 +3,7 @@ title = "High availibility"
 date = 2023-09-26T10:42:09.000Z
 draft = false
 slug = "cluster high availibility"
-weight = 1
+weight = 3
 +++
 
 ![](/images/proxcli_cluster_ha_help.png)
