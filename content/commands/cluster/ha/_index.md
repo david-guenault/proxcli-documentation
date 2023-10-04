@@ -1,7 +1,7 @@
 ---
-title = "High availibility"
-menuTitle = "HA"
-weight = 4
+title: High availibility
+menuTitle: HA
+weight: 4
 ---
 
 ![](/images/proxcli_cluster_ha_help.png)
