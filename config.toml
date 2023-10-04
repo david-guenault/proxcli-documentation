@@ -143,6 +143,7 @@ title = "proxcli documentation"
 [params]
   editURL = "https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/"
   description = "proxcli documentation"
+  alwaysopen = false
   author = "David GUENAULT"
   showVisitedLinks = true
   collapsibleMenu = true
