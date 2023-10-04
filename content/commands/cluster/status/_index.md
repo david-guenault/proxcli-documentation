@@ -1,10 +1,6 @@
 ---
 title: cluster status
 menuTitle: Status
-date: {}
-categories: []
-description: ""
-keywords: ""
 weight: 1
 ---
 

@@ -1,10 +1,6 @@
 ---
 title: Cluster log
 menuTitle: Log
-date: {}
-categories: []
-description: ""
-keywords: ""
 weight: 2
 ---
 
