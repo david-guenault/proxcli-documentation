@@ -16,6 +16,7 @@ menuTitle = "Set"
 |---|---|---|
 |vm-tags|coma separated list of tags|string|
 |filter-name|regex applied to match virtual machine names|string|
+|set-mode|whether we can append or replace tags. default to replace|string|
 
 ## Examples
 
@@ -23,4 +24,10 @@ menuTitle = "Set"
 
 ```bash 
 proxcli vms tags set --vm-tags "template,ubuntu" --filter-name "^ubuntu-cloud"
+```
+
+- append tags for all vms name matching the specified regex
+
+```bash 
+proxcli vms tags set --vm-tags "newtag" --filter-name "^ubuntu-cloud" --set-mode append
 ```
