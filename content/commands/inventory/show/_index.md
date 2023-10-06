@@ -9,6 +9,7 @@ weight: 1
 ## Options
 
 |option|description|Allowed values|
+|---|---|---|
 |filter-name|filter inventory by a regex applyed on virtual machines names|string|
 |exclude-tag|exclude tags from inventory. Comma separated list of tags|string|
 |output-format|output format is one of (table, json, yaml)|string|
