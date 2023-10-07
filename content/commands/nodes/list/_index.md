@@ -1,7 +1,7 @@
 ---
 title: "List cluster nodes"
 weight: 1
-menuTitle: "Clone"
+menuTitle: "List"
 ---
 
 
