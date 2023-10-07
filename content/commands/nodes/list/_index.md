@@ -11,7 +11,7 @@ menuTitle: "List"
 
 |option|description|Allowed values|
 |---|---|---|
-|filter-name||string|
+|filter-name|apply a regex filter on nodes names|string|
 |output-format|one of table, json or yaml. Default to table|string|
 
 
