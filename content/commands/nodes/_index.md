@@ -1,6 +1,6 @@
 ---
-archetype: "chapter"
 title: "Nodes"
+menuTitle: "Nodes"
 weight: 5
 ---
 
