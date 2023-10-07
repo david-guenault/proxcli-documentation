@@ -12,7 +12,7 @@ weight: 1
 |---|---|---|
 |filter-name|filter inventory by a regex applyed on virtual machines names|string|
 |exclude-tag|exclude tags from inventory. Comma separated list of tags|string|
-|output-format|output format is one of (table, json, yaml)|string|
+|output-format|output format is one of (json, yaml)|string|
 
 ## Examples
 
