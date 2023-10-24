@@ -1,6 +1,6 @@
 ---
 title: "Show cluster nodes tasks"
-weight: 2
+weight: 4
 menuTitle: "Tasks"
 ---
 

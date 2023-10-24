@@ -5,7 +5,7 @@ menuTitle = "List"
 +++
 
 
-![](/images/proxcli_cluster_storages_list_help.png)
+![](/images/proxcli_nodes_storages_list_help.png)
 
 ## Options
 
