@@ -6,4 +6,4 @@ slug = "virtual-machines"
 weight = 2
 +++
 
-![](/images/proxcli_vms_help.png)
+![](/images/proxcli_vms_help.png)!
