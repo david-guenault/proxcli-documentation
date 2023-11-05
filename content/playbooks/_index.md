@@ -339,7 +339,7 @@ provision_instances:
           - "dev"
       lb:
         desc: "load balancers"
-        count: 3 
+        count: 2 
         ha_group: "lb" 
         tags:
           - "grafana"
@@ -351,7 +351,7 @@ provision_instances:
           - "dev"
       db:
         desc: "database"
-        count: 2
+        count: 3
         nodes: pve1,pve2
         cores: 4
         memory: 4096 
